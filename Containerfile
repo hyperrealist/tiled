@@ -59,8 +59,7 @@ RUN set -ex && \
         --project src \
         --extra server \
         --no-dev \
-        --no-install-project && \
-    uv pip install git+https://github.com/hyperrealist/bluesky-tiled-plugins.git
+        --no-install-project
 
 # Now install the rest from `./src`: The APPLICATION w/o dependencies.
 # `./src` will NOT be copied into the runtime container.
@@ -76,7 +75,8 @@ RUN set -ex && \
         # Add httpie as a developer convenience.
         # --with httpie \
         --no-dev \
-        --no-editable
+        --no-editable && \
+    uv pip install --project src git+https://github.com/hyperrealist/bluesky-tiled-plugins.git
 
 ##########################################################################
 
