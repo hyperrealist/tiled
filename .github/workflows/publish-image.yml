@@ -76,7 +76,7 @@ jobs:
 
       - name: Log in to the Chart registry
         run: |
-          echo ${{ secrets.GITHUB_TOKEN }} | helm registry login ghcr.io/${{ github.repository }} --username ${{ github.repository_owner }} --password-stdin
+          echo ${{ secrets.GITHUB_TOKEN }} | helm registry login ghcr.io --username ${{ github.repository_owner }} --password-stdin
 
       - name: Package and Push chart
         if: github.ref_type == 'tag'
@@ -89,4 +89,4 @@ jobs:
         env:
           REPO: ${{ github.repository_owner }}
         run: |
-          helm push /tmp/tiled-${{ steps.meta.outputs.version }}.tgz oci://ghcr.io/${REPO@L}/charts
+          helm push /tmp/tiled-${{ steps.meta.outputs.version }}.tgz oci://ghcr.io/${{ github.repository }}/charts
