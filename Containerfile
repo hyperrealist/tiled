@@ -76,7 +76,7 @@ RUN set -ex && \
         # --with httpie \
         --no-dev \
         --no-editable && \
-    uv pip install --project src git+https://github.com/hyperrealist/bluesky-tiled-plugins.git
+    /app/bin/python3 -m pip install --project src git+https://github.com/hyperrealist/bluesky-tiled-plugins.git
 
 ##########################################################################
 
