@@ -30,6 +30,7 @@ dependencies = [
     "pydantic-settings >=2, <2.12.0",
     "pyyaml",
     "typer",
+    "bluesky-tiled-plugins @ git+https://github.com/hyperrealist/bluesky-tiled-plugins.git",
 ]
 
 classifiers = [
