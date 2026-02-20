@@ -60,7 +60,7 @@ RUN set -ex && \
         --extra server \
         --no-dev \
         --no-install-project && \
-    /app/bin/pip install git+https://github.com/hyperrealist/bluesky-tiled-plugins.git@main#egg=bluesky-tiled-plugins
+    /app/bin/pip install git+https://github.com/hyperrealist/bluesky-tiled-plugins.git
 
 # Now install the rest from `./src`: The APPLICATION w/o dependencies.
 # `./src` will NOT be copied into the runtime container.
