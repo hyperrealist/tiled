@@ -76,6 +76,8 @@ RUN set -ex && \
         # --with httpie \
         --no-dev \
         --no-editable && \
+    /app/bin/python -m ensurepip --upgrade && \
+    /app/bin/python -m pip install --upgrade pip setuptools wheel && \
     /app/bin/python3 -m pip install --project src git+https://github.com/hyperrealist/bluesky-tiled-plugins.git
 
 ##########################################################################
