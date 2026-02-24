@@ -79,7 +79,7 @@ RUN set -ex && \
 
 RUN    /app/bin/python -m ensurepip --upgrade
 RUN    /app/bin/python -m pip install --upgrade pip setuptools wheel
-RUN    uv pip install git+https://github.com/hyperrealist/bluesky-tiled-plugins.git
+RUN    uv pip install --system git+https://github.com/hyperrealist/bluesky-tiled-plugins.git
 
 ##########################################################################
 
