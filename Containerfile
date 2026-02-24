@@ -77,9 +77,9 @@ RUN set -ex && \
         --no-dev \
         --no-editable
 
-RUN    /app/bin/python -m ensurepip --upgrade
-RUN    /app/bin/python -m pip install --upgrade pip setuptools wheel
-RUN    uv pip install --system git+https://github.com/hyperrealist/bluesky-tiled-plugins.git
+RUN uv venv python3.12 /app && \
+    uv sync --project src --extra server --no-dev --no-editable
+RUN uv pip install git+https://github.com/hyperrealist/bluesky-tiled-plugins.git@scanspec-endpoint
 
 ##########################################################################
 
