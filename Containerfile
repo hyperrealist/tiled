@@ -76,6 +76,11 @@ RUN set -ex && \
         # --with httpie \
         --no-dev \
         --no-editable
+# Install test-dls-tiled after tiled is present.
+# --no-deps avoids uv trying to pull tiled[all] from PyPI (which would
+# conflict with the local project shadowing the 'tiled' name).
+RUN set -ex && \
+    uv pip install --python /app/bin/python test-dls-tiled --no-deps
 
 ##########################################################################
 
