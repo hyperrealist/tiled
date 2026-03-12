@@ -107,6 +107,7 @@ all = [
     "xarray",
     "zarr",
     "zstandard",
+    "test-dls-tiled",
 ]
 # These are needed by the client and server to transmit/receive arrays.
 array = [
